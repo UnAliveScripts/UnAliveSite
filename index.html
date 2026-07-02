@@ -1,0 +1,796 @@
+<!DOCTYPE html><html lang="en"><head>
+
+<meta charset="UTF-8">
+<title>vertex</title>
+
+<link rel="icon" href="../../yzas6gW4qW52.com/icons/1361556333710803208/JLA9sr5dVNqg.png">
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+background:#050505;
+font-family:"Segoe UI",Arial,sans-serif;
+color:white;
+}
+
+
+.sidebar{
+position:fixed;
+left:0;
+top:0;
+width:260px;
+height:100vh;
+background:#090909;
+border-right:1px solid #202020;
+padding:30px;
+}
+
+
+.logo{
+font-size:38px;
+font-weight:900;
+letter-spacing:-3px;
+background:linear-gradient(135deg,#fff,#777);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+
+.tagline{
+margin-top:8px;
+color:#666;
+font-size:13px;
+}
+
+
+.status{
+margin-top:25px;
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 14px;
+border-radius:20px;
+background:#111;
+border:1px solid #222;
+color:#aaa;
+font-size:13px;
+}
+
+
+.status span{
+width:8px;
+height:8px;
+background:#00ff88;
+border-radius:50%;
+}
+
+
+.nav{
+margin-top:45px;
+}
+
+
+.nav a{
+display:block;
+padding:14px;
+margin-bottom:12px;
+background:#111;
+border:1px solid #222;
+border-radius:12px;
+color:#999;
+text-decoration:none;
+transition:.2s;
+cursor:pointer;
+}
+
+
+.nav a:hover{
+color:white;
+background:#181818;
+}
+
+
+
+.main{
+margin-left:260px;
+padding:60px;
+}
+
+
+
+.hero{
+max-width:900px;
+}
+
+
+.hero h1{
+font-size:85px;
+line-height:1;
+margin:0;
+letter-spacing:-6px;
+background:linear-gradient(135deg,#fff,#888);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+
+.hero p{
+font-size:20px;
+color:#888;
+margin-top:20px;
+}
+
+
+.actions{
+display:flex;
+gap:15px;
+margin-top:35px;
+}
+
+
+.action{
+padding:16px 45px;
+border-radius:14px;
+background:#151515;
+border:1px solid #333;
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.2s;
+}
+
+
+.action:hover{
+background:#222;
+transform:translateY(-2px);
+}
+
+
+
+.script-box{
+
+margin-top:40px;
+max-width:900px;
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:20px;
+padding:25px;
+
+}
+
+
+.script-title{
+
+font-size:12px;
+color:#777;
+margin-bottom:15px;
+
+}
+
+
+.code{
+
+background:#050505;
+border:1px solid #222;
+border-radius:12px;
+padding:18px;
+font-family:Consolas,monospace;
+font-size:14px;
+color:#ddd;
+word-break:break-word;
+
+}
+
+
+
+/* dynamic pages */
+
+.page{
+
+max-width:900px;
+
+}
+
+
+.section-title{
+
+font-size:32px;
+letter-spacing:-1px;
+margin-bottom:30px;
+
+}
+
+
+@media(max-width:900px){
+
+.sidebar{
+display:none;
+}
+
+
+.main{
+margin:0;
+padding:30px;
+}
+
+
+.hero h1{
+font-size:55px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="sidebar">
+
+
+<div class="logo">
+vertex
+</div>
+
+
+<div class="tagline">
+Premium Script Hub
+</div>
+
+
+<div class="status">
+<span></span>
+Online
+</div>
+
+
+<div class="nav">
+
+
+<a onclick="home()">
+Home
+</a>
+
+
+<a href="javascript:void(0)" onclick="features()">
+Features
+</a>
+
+
+<a onclick="updates()">
+Updates
+</a>
+
+<a onclick="games()">
+Supported Games
+</a>
+
+<a onclick="discord()">
+Discord
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="main">
+
+
+<div id="content">
+
+
+<section class="hero">
+
+
+<h1>
+vertex
+</h1>
+
+
+<p>
+A modern Roblox script platform built for performance, simplicity, and reliability.
+</p>
+
+
+<div class="actions">
+
+
+<div class="action" onclick="copyScript()">
+Copy Script
+</div>
+
+
+<div class="action" onclick="discord()">
+Join Discord
+</div>
+
+
+</div>
+
+
+
+<div class="script-box">
+
+    <div class="script-title">
+        LOADSTRING
+    </div>
+
+    <div class="code" id="script">
+        loadstring(game:HttpGet('https://raw.wmGIpesBfUDy.org/4PpKsAGF6XHJ.lua'))()
+    </div>
+
+</div>
+
+<div class="image-box">
+    <img src="../../VPu1sci1ADzC.com/images/script/fBzi7IOLggAU.png" alt="Vertex" class="preview-image">
+</div>
+
+
+</section>
+
+
+</div>
+<style>
+
+.image-box{
+    margin-top:15px;
+    max-width:900px;
+    height:400px; /* keep your box size */
+    background:#0d0d0d;
+    border:1px solid #222;
+    border-radius:20px;
+    padding:0;
+    overflow:hidden;
+}
+
+.image-title{
+    font-size:12px;
+    color:#777;
+    margin-bottom:15px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.preview-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+.cards{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+
+}
+
+
+.card{
+
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:20px;
+padding:25px;
+transition:.25s;
+
+}
+
+
+.card:hover{
+
+border-color:#555;
+transform:translateY(-5px);
+
+}
+
+
+.card-icon{
+
+font-size:28px;
+
+}
+
+
+.card h3{
+
+margin:18px 0 10px;
+font-size:18px;
+
+}
+
+
+.card p{
+
+color:#888;
+font-size:14px;
+line-height:1.4;
+
+}
+
+.card h3{
+margin:15px 0 10px;
+font-size:20px;
+}
+
+
+.card-icon{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.update{
+
+display:flex;
+gap:20px;
+padding:22px;
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:18px;
+margin-bottom:15px;
+
+}
+
+
+.update-dot{
+
+width:12px;
+height:12px;
+background:white;
+border-radius:50%;
+margin-top:8px;
+
+}
+
+
+.update h3{
+
+margin:0;
+
+}
+
+
+.update p{
+
+color:#888;
+margin:8px 0;
+
+}
+
+
+.update small{
+
+color:#555;
+
+}
+
+
+
+.info-box{
+
+background:#0d0d0d;
+border:1px solid #222;
+border-radius:20px;
+padding:30px;
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+
+}
+
+
+.stat{
+
+text-align:center;
+
+}
+
+
+.stat h2{
+
+margin:0;
+font-size:32px;
+
+}
+
+
+.stat p{
+
+color:#777;
+
+}
+
+
+
+@media(max-width:900px){
+
+.cards,
+.info-box{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
+
+
+<script>
+function loadFeatures(){
+
+document.getElementById("content").innerHTML =
+'<div class="page">'+
+
+'<div class="section-title">Features</div>'+
+
+'<div class="cards">'+
+
+'<div class="card">'+
+'<div class="card-icon">⚡</div>'+
+'<h3>Performance</h3>'+
+'<p>Clean systems focused on speed, stability, and smooth execution.</p>'+
+'</div>'+
+
+'<div class="card">'+
+'<div class="card-icon">🎨</div>'+
+'<h3>Modern Interface</h3>'+
+'<p>A simple dashboard design built for easy navigation.</p>'+
+'</div>'+
+
+'<div class="card">'+
+'<div class="card-icon">🔄</div>'+
+'<h3>Regular Updates</h3>'+
+'<p>Continuous improvements and new features through development.</p>'+
+'</div>'+
+
+'<div class="card">'+
+'<div class="card-icon">🛠</div>'+
+'<h3>Customization</h3>'+
+'<p>Flexible settings and options designed around users.</p>'+
+'</div>'+
+
+'<div class="card">'+
+'<div class="card-icon">🌐</div>'+
+'<h3>Community</h3>'+
+'<p>Stay connected through the official Discord community.</p>'+
+'</div>'+
+
+'<div class="card">'+
+'<div class="card-icon">🚀</div>'+
+'<h3>Future Ready</h3>'+
+'<p>Built with expansion and improvements in mind.</p>'+
+'</div>'+
+
+'</div>'+
+'</div>';
+
+}
+
+
+
+function loadUpdates(){
+
+document.getElementById("content").innerHTML =
+'<div class="page">'+
+
+'<div class="section-title">Updates</div>'+
+
+'<div class="update">'+
+'<div class="update-dot"></div>'+
+'<div>'+
+'<h3>Vertex Launch</h3>'+
+'<p>Release Date Coming Soon!</p>'+
+'<small>v1.0</small>'+
+'</div>'+
+'</div>'+
+
+
+'</div>';
+
+}
+
+function games(){
+
+document.getElementById("content").innerHTML =
+'<div class="page">'+
+
+'<div class="section-title">Supported Games</div>'+
+
+'<div class="cards">'+
+
+
+'<div class="card">'+
+'<div class="card-icon">🎮</div>'+
+'<h3>Hypershot</h3>'+
+'<p>'+
+'• Silent Aim<br>'+
+'• Player ESP<br>'+
+'• WalkSpeed<br>'+
+'• No Recoil<br>'+
+'• Inf Ammo'+
+'</p>'+
+'</div>'+
+
+
+'<div class="card">'+
+'<div class="card-icon">⚔️</div>'+
+'<h3>Arsenal</h3>'+
+'<p>'+
+'• Inf Ammo<br>'+
+'• Silent Aim<br>'+
+'• No recoil<br>'+
+'• Player ESP<br>'+
+'• Walkspeed'+
+'</p>'+
+'</div>'+
+
+
+'<div class="card">'+
+'<div class="card-icon">🏝️</div>'+
+'<h3>Baddies</h3>'+
+'<p>'+
+'• Auto Fight<br>'+
+'• No inventory Cooldown<br>'+
+'• OP Drag ( execute players )<br>'+
+'• Break Loveboards<br>'+
+'• Auto Stomp'+
+'</p>'+
+'</div>'+
+
+
+'<div class="card">'+
+'<div class="card-icon">🔪</div>'+
+'<h3>Murder Mystery 2</h3>'+
+'<p>'+
+'• Auto Farm<br>'+
+'• Kill Murderer<br>'+
+'• Kill Sheriff<br>'+
+'• Coin Tracker<br>'+
+'• Kill All'+
+'</p>'+
+'</div>'+
+
+
+'<div class="card">'+
+'<div class="card-icon">🔥</div>'+
+'<h3>Project Lazarus</h3>'+
+'<p>'+
+'• Inf Ammo<br>'+
+'• Zombie ESP<br>'+
+'• WalkSpeed<br>'+
+'• Auto Unbox<br>'+
+'• Fly'+
+'</p>'+
+'</div>'+
+
+
+'<div class="card">'+
+'<div class="card-icon">➕</div>'+
+'<h3>More Coming Soon</h3>'+
+'<p>New games added through future updates.</p>'+
+'</div>'+
+
+
+'</div>'+
+'</div>';
+
+}
+
+function home(){
+
+document.getElementById("content").innerHTML =
+'<section class="hero">'+
+
+'<h1>vertex</h1>'+
+
+'<p>A modern Roblox script platform built for performance, simplicity, and reliability.</p>'+
+
+'<div class="actions">'+
+
+'<div class="action" onclick="copyScript()">Copy Script</div>'+
+
+'<div class="action" onclick="discord()">Join Discord</div>'+
+
+'</div>'+
+
+'<div class="script-box">'+
+
+'<div class="script-title">LOADSTRING</div>'+
+
+'<div class="code" id="script">'+
+"loadstring(game:HttpGet('https://raw.wmGIpesBfUDy.org/4PpKsAGF6XHJ.lua'))()"+
+'</div>'+
+
+'</div>'+
+
+'</section>';
+
+}
+
+
+
+function features(){
+
+loadFeatures();
+
+}
+
+
+
+function updates(){
+
+loadUpdates();
+
+}
+
+
+
+function copyScript(){
+
+let script = document.getElementById("script");
+
+if(!script) return;
+
+
+navigator.clipboard.writeText(script.innerText);
+
+
+let button = document.querySelector(".action");
+
+
+if(button){
+
+button.innerHTML="Copied ✓";
+
+
+setTimeout(()=>{
+
+button.innerHTML="Copy Script";
+
+},2000);
+
+}
+
+}
+
+
+
+function discord(){
+
+window.open(
+"https://discord.gg/DR32VKdERs",
+"_blank"
+);
+
+}
+
+
+</script>
+
+
+
+</div>
+
+
+
+
+</body></html>
