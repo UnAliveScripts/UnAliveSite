@@ -527,211 +527,66 @@ grid-template-columns:1fr;
 
 
 <script>
-function loadFeatures(){
+var siteData = null;
 
-document.getElementById("content").innerHTML =
-'<div class="page">'+
-
-'<div class="section-title">Features</div>'+
-
-'<div class="cards">'+
-
-'<div class="card">'+
-'<div class="card-icon">⚡</div>'+
-'<h3>Performance</h3>'+
-'<p>Clean systems focused on speed, stability, and smooth execution.</p>'+
-'</div>'+
-
-'<div class="card">'+
-'<div class="card-icon">🎨</div>'+
-'<h3>Modern Interface</h3>'+
-'<p>A simple dashboard design built for easy navigation.</p>'+
-'</div>'+
-
-'<div class="card">'+
-'<div class="card-icon">🔄</div>'+
-'<h3>Regular Updates</h3>'+
-'<p>Continuous improvements and new features through development.</p>'+
-'</div>'+
-
-'<div class="card">'+
-'<div class="card-icon">🛠</div>'+
-'<h3>Customization</h3>'+
-'<p>Flexible settings and options designed around users.</p>'+
-'</div>'+
-
-'<div class="card">'+
-'<div class="card-icon">🌐</div>'+
-'<h3>Community</h3>'+
-'<p>Stay connected through the official Discord community.</p>'+
-'</div>'+
-
-'<div class="card">'+
-'<div class="card-icon">🚀</div>'+
-'<h3>Future Ready</h3>'+
-'<p>Built with expansion and improvements in mind.</p>'+
-'</div>'+
-
-'</div>'+
-'</div>';
-
+function loadConfig(callback){
+  if(siteData){ callback(siteData); return; }
+  fetch('/config.json').then(r=>r.json()).then(d=>{ siteData=d; callback(d); });
 }
 
-
+function loadFeatures(){
+  loadConfig(function(d){
+    var html = '<div class="page"><div class="section-title">Features</div><div class="cards">';
+    d.features.forEach(function(f){
+      html += '<div class="card"><div class="card-icon">'+f.icon+'</div><h3>'+f.title+'</h3><p>'+f.desc+'</p></div>';
+    });
+    html += '</div></div>';
+    document.getElementById("content").innerHTML = html;
+  });
+}
 
 function loadUpdates(){
-
-document.getElementById("content").innerHTML =
-'<div class="page">'+
-
-'<div class="section-title">Updates</div>'+
-
-'<div class="update">'+
-'<div class="update-dot"></div>'+
-'<div>'+
-'<h3>UnAlive Launch</h3>'+
-'<p>Release Date Coming Soon!</p>'+
-'<small>v1.0</small>'+
-'</div>'+
-'</div>'+
-
-'</div>';
-
+  loadConfig(function(d){
+    var html = '<div class="page"><div class="section-title">Updates</div>';
+    d.updates.forEach(function(u){
+      html += '<div class="update"><div class="update-dot"></div><div><h3>'+u.title+'</h3><p>'+u.description+'</p><small>'+u.version+'</small></div></div>';
+    });
+    html += '</div>';
+    document.getElementById("content").innerHTML = html;
+  });
 }
 
 function games(){
-
-document.getElementById("content").innerHTML =
-'<div class="page">'+
-
-'<div class="section-title">Supported Games</div>'+
-
-'<div class="cards">'+
-
-
-'<div class="card">'+
-'<div class="card-icon">🎮</div>'+
-'<h3>Hypershot</h3>'+
-'<p>'+
-'• Silent Aim<br>'+
-'• Player ESP<br>'+
-'• WalkSpeed<br>'+
-'• No Recoil<br>'+
-'• Inf Ammo'+
-'</p>'+
-'</div>'+
-
-
-'<div class="card">'+
-'<div class="card-icon">⚔️</div>'+
-'<h3>Arsenal</h3>'+
-'<p>'+
-'• Inf Ammo<br>'+
-'• Silent Aim<br>'+
-'• No recoil<br>'+
-'• Player ESP<br>'+
-'• Walkspeed'+
-'</p>'+
-'</div>'+
-
-
-'<div class="card">'+
-'<div class="card-icon">🏝️</div>'+
-'<h3>Baddies</h3>'+
-'<p>'+
-'• Auto Fight<br>'+
-'• No inventory Cooldown<br>'+
-'• OP Drag ( execute players )<br>'+
-'• Break Loveboards<br>'+
-'• Auto Stomp'+
-'</p>'+
-'</div>'+
-
-
-'<div class="card">'+
-'<div class="card-icon">🔪</div>'+
-'<h3>Murder Mystery 2</h3>'+
-'<p>'+
-'• Auto Farm<br>'+
-'• Kill Murderer<br>'+
-'• Kill Sheriff<br>'+
-'• Coin Tracker<br>'+
-'• Kill All'+
-'</p>'+
-'</div>'+
-
-
-'<div class="card">'+
-'<div class="card-icon">🔥</div>'+
-'<h3>Project Lazarus</h3>'+
-'<p>'+
-'• Inf Ammo<br>'+
-'• Zombie ESP<br>'+
-'• WalkSpeed<br>'+
-'• Auto Unbox<br>'+
-'• Fly'+
-'</p>'+
-'</div>'+
-
-
-'<div class="card">'+
-'<div class="card-icon">➕</div>'+
-'<h3>More Coming Soon</h3>'+
-'<p>New games added through future updates.</p>'+
-'</div>'+
-
-
-'</div>'+
-'</div>';
-
+  loadConfig(function(d){
+    var html = '<div class="page"><div class="section-title">Supported Games</div><div class="cards">';
+    var icons = {hypershot:"🎮",arsenal:"⚔️",baddies:"🏝️",mm2:"🔪",lazarus:"🔥"};
+    Object.keys(d.games).forEach(function(k){
+      var g = d.games[k];
+      var name = g.name || k.charAt(0).toUpperCase() + k.slice(1);
+      html += '<div class="card"><div class="card-icon">'+(icons[k]||"🎮")+'</div><h3>'+name+'</h3><p>';
+      g.features.forEach(function(f){ html += '• '+f+'<br>'; });
+      html += '</p></div>';
+    });
+    html += '<div class="card"><div class="card-icon">➕</div><h3>More Coming Soon</h3><p>New games added through future updates.</p></div>';
+    html += '</div></div>';
+    document.getElementById("content").innerHTML = html;
+  });
 }
 
 function home(){
-
-document.getElementById("content").innerHTML =
-'<section class="hero">'+
-
-'<h1>UnAlive</h1>'+
-
-'<p>A modern Roblox script platform built for performance, simplicity, and reliability.</p>'+
-
-'<div class="actions">'+
-
-'<div class="action" onclick="copyScript()">Copy Script</div>'+
-
-'<div class="action" onclick="discord()">Join Discord</div>'+
-
-'</div>'+
-
-'<div class="script-box">'+
-
-'<div class="script-title">LOADSTRING</div>'+
-
-'<div class="code" id="script">'+
-"loadstring(game:HttpGet('https://unalive.net/script.lua'))()"+
-'</div>'+
-
-'</div>'+
-
-'</section>';
-
+  loadConfig(function(d){
+    document.getElementById("content").innerHTML =
+    '<section class="hero"><h1>'+d.site.name+'</h1>'+
+    '<p>'+d.site.description+'</p>'+
+    '<div class="actions"><div class="action" onclick="copyScript()">Copy Script</div><div class="action" onclick="discord()">Join Discord</div></div>'+
+    '<div class="script-box"><div class="script-title">LOADSTRING</div><div class="code" id="script">'+
+    "loadstring(game:HttpGet('https://unalive.net/script.lua'))()"+
+    '</div></div></section>';
+  });
 }
 
-
-
-function features(){
-
-loadFeatures();
-
-}
-
-
-
-function updates(){
-
-loadUpdates();
-
-}
+function features(){ loadFeatures(); }
+function updates(){ loadUpdates(); }
 
 
 

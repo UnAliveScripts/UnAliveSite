@@ -14,6 +14,9 @@
   "social": {
     "discord": "https://discord.gg/6mQYtWcFpz"
   },
+  "updates": [
+    { "title": "UnAlive Launch", "description": "Release Date Coming Soon!", "version": "v1.0" }
+  ],
   "scripts": {
     "main": {
       "filename": "script.lua",
