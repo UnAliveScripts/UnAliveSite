@@ -1,0 +1,14 @@
+name = "unalive-site"
+main = "src/raw-worker.js"
+compatibility_date = "2026-07-02"
+
+[env.production]
+name = "unalive-raw"
+route = { pattern = "raw.unalive.net", zone_id = "1ad3d45a4564751e221cd5d2a5179439" }
+
+[env.pages]
+name = "unalive-site-pages"
+
+[[env.pages.routes]]
+pattern = "unalive.net"
+zone_id = "1ad3d45a4564751e221cd5d2a5179439"
