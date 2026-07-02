@@ -1,0 +1,108 @@
+{
+  "site": {
+    "name": "UnAlive",
+    "tagline": "Premium Script Hub",
+    "description": "A modern Roblox script platform built for performance, simplicity, and reliability.",
+    "domain": "unalive.net",
+    "raw_domain": "raw.unalive.net"
+  },
+  "branding": {
+    "logo_text": "UnAlive",
+    "status": "Online",
+    "status_color": "#00ff88"
+  },
+  "social": {
+    "discord": "https://discord.gg/6mQYtWcFpz"
+  },
+  "updates": [
+    { "title": "UnAlive Launch", "description": "Release Date Coming Soon!", "version": "v1.0" }
+  ],
+  "scripts": {
+    "main": {
+      "filename": "script.lua",
+      "display_name": "UnAlive",
+      "description": "Main UnAlive script"
+    }
+  },
+  "games": {
+    "hypershot": {
+      "features": [
+        "Silent Aim",
+        "Player ESP",
+        "WalkSpeed",
+        "No Recoil",
+        "Inf Ammo"
+      ]
+    },
+    "arsenal": {
+      "features": [
+        "Inf Ammo",
+        "Silent Aim",
+        "No Recoil",
+        "Player ESP",
+        "WalkSpeed"
+      ]
+    },
+    "baddies": {
+      "features": [
+        "Auto Fight",
+        "No Inventory Cooldown",
+        "OP Drag",
+        "Break Loveboards",
+        "Auto Stomp"
+      ]
+    },
+    "mm2": {
+      "name": "Murder Mystery 2",
+      "features": [
+        "Auto Farm",
+        "Kill Murderer",
+        "Kill Sheriff",
+        "Coin Tracker",
+        "Kill All"
+      ]
+    },
+    "lazarus": {
+      "name": "Project Lazarus",
+      "features": [
+        "Inf Ammo",
+        "Zombie ESP",
+        "WalkSpeed",
+        "Auto Unbox",
+        "Fly"
+      ]
+    }
+  },
+  "features": [
+    {
+      "icon": "\u26a1",
+      "title": "Performance",
+      "desc": "Clean systems focused on speed, stability, and smooth execution."
+    },
+    {
+      "icon": "\ud83c\udfa8",
+      "title": "Modern Interface",
+      "desc": "A simple dashboard design built for easy navigation."
+    },
+    {
+      "icon": "\ud83d\udd04",
+      "title": "Regular Updates",
+      "desc": "Continuous improvements and new features through development."
+    },
+    {
+      "icon": "\ud83d\udee0",
+      "title": "Customization",
+      "desc": "Flexible settings and options designed around users."
+    },
+    {
+      "icon": "\ud83c\udf10",
+      "title": "Community",
+      "desc": "Stay connected through the official Discord community."
+    },
+    {
+      "icon": "\ud83d\ude80",
+      "title": "Future Ready",
+      "desc": "Built with expansion and improvements in mind."
+    }
+  ]
+}
