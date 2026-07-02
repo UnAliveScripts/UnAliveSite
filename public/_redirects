@@ -1,0 +1,5 @@
+# Serve static files directly - no SPA fallback for these paths
+/script.lua  /script.lua  200
+
+# SPA fallback for all other paths
+/*  /index.html  200
