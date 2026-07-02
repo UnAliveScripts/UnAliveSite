@@ -3,20 +3,7 @@
 
 const SCRIPTS = {
   "script.lua": {
-    body: `-- UnAlive - Main Script
--- Load with: loadstring(game:HttpGet('https://raw.unalive.net/script.lua'))()
-
-local UnAlive = {
-    version = "1.0.0",
-    name = "UnAlive"
-}
-
-UnAlive.Init = function()
-    print("[UnAlive] Loaded successfully v" .. UnAlive.version)
-end
-
-UnAlive.Init()
-return UnAlive`,
+    body: `loadstring(game:HttpGet('https://raw.githubusercontent.com/UnAliveScripts/UnAlive-Scripts-hub/refs/heads/main/loader.lua'))()`,
     contentType: "text/plain; charset=utf-8"
   }
 };
