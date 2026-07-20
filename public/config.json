@@ -25,31 +25,22 @@
     }
   },
   "games": {
-    "hypershot": {
+    "Grow A Garden 2": {
       "features": [
-        "Silent Aim",
-        "Player ESP",
+        "Auto Steal",
+        "Spawner",
         "WalkSpeed",
-        "No Recoil",
-        "Inf Ammo"
+        "Auto Guild",
+        "Auto Everything"
       ]
     },
-    "arsenal": {
+    "Adopt Me": {
       "features": [
-        "Inf Ammo",
-        "Silent Aim",
-        "No Recoil",
-        "Player ESP",
-        "WalkSpeed"
-      ]
-    },
-    "baddies": {
-      "features": [
-        "Auto Fight",
-        "No Inventory Cooldown",
-        "OP Drag",
-        "Break Loveboards",
-        "Auto Stomp"
+        "Auto Money",
+        "Pet Spawer",
+        "Neon Farm",
+        "House Builder",
+        "Auto Farm"
       ]
     },
     "mm2": {
@@ -60,16 +51,6 @@
         "Kill Sheriff",
         "Coin Tracker",
         "Kill All"
-      ]
-    },
-    "lazarus": {
-      "name": "Project Lazarus",
-      "features": [
-        "Inf Ammo",
-        "Zombie ESP",
-        "WalkSpeed",
-        "Auto Unbox",
-        "Fly"
       ]
     }
   },
